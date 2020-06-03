@@ -29,7 +29,12 @@ app.get("/api/notes", function(req, res) {
 app.post("/api/notes", function(req, res) {
     let noteEl = req.body
     console.log(noteEl)
+    notes.push(noteEl)
+    fs.writeFileSync(__dirname + "/Develop/db/db.json", JSON.stringify(notes, null, 2))
+    
     res.end()
+  
+  
   });
 
 // Corrects CSS
