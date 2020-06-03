@@ -11,6 +11,12 @@ app.get("/", function(req, res) {
     res.sendFile(__dirname + "/Develop/public/index.html");
   });
 
+app.get("/notes", function(req, res) {
+    res.sendFile(__dirname + "/Develop/public/notes.html");
+  });
+// Corrects CSS
+app.use(express.static('public'));
+
 
   
 
