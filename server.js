@@ -1,8 +1,12 @@
 const express= require("express")
 const fs = require("fs")
 const app= express()
-
 const PORT = process.env.PORT || 4000
+let notes = JSON.parse(fs.readFileSync(__dirname + "/Develop/db/db.json", "utf-8", function(err){
+  if(err) throw err 
+})) || [] 
+
+
 //Express use
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -19,11 +23,16 @@ app.get("/notes", function(req, res) {
   });
 
 app.get("/api/notes", function(req, res) {
-  
+    return res.json(notes) 
   });
 
+app.post("/api/notes", function(req, res) {
+    let noteEl = req.body
+    console.log(noteEl)
+    res.end()
+  });
 
-  // Corrects CSS
+// Corrects CSS
 app.use(express.static('Develop/public'));
 
 
