@@ -3,6 +3,9 @@ const fs = require("fs")
 const app= express()
 
 const PORT = process.env.PORT || 4000
+//Express use
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 //ROUTES
 
@@ -14,8 +17,16 @@ app.get("/", function(req, res) {
 app.get("/notes", function(req, res) {
     res.sendFile(__dirname + "/Develop/public/notes.html");
   });
-// Corrects CSS
-app.use(express.static('public'));
+
+app.get("/api/notes", function(req, res) {
+  
+  });
+
+
+  // Corrects CSS
+app.use(express.static('Develop/public'));
+
+
 
 
   
