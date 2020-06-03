@@ -30,12 +30,18 @@ app.post("/api/notes", function(req, res) {
     let noteEl = req.body
     console.log(noteEl)
     notes.push(noteEl)
-    fs.writeFileSync(__dirname + "/Develop/db/db.json", JSON.stringify(notes, null, 2))
+    fs.writeFileSync(__dirname + "/Develop/db/db.json", JSON.stringify(notes, null, 2), function(err){
+      if(err) throw err
+    })
     
     res.end()
   
   
   });
+
+app.delete("/api/notes/:id", function(req,res){
+  let id = req.params.id
+})
 
 // Corrects CSS
 app.use(express.static('Develop/public'));
