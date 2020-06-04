@@ -28,6 +28,7 @@ app.get("/api/notes", function(req, res) {
 
 app.post("/api/notes", function(req, res) {
     let noteEl = req.body
+    noteEl.id = notes.length
     console.log(noteEl)
     notes.push(noteEl)
     fs.writeFileSync(__dirname + "/Develop/db/db.json", JSON.stringify(notes, null, 2), function(err){
@@ -41,6 +42,14 @@ app.post("/api/notes", function(req, res) {
 
 app.delete("/api/notes/:id", function(req,res){
   let id = req.params.id
+  notes.splice(id, 1)
+  for(var i = 0; i<notes.length; i++){
+    notes[i].id = i
+  }
+  fs.writeFileSync(__dirname + "/Develop/db/db.json", JSON.stringify(notes, null, 2), function(err){
+    if(err) throw err
+  })
+res.end()
 })
 
 // Corrects CSS
