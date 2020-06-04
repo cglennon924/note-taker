@@ -1,5 +1,5 @@
 # note-taker
-step 1
+
 
 ## Heroku URL
 https://fierce-bayou-58728.herokuapp.com/
