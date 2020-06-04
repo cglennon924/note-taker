@@ -18,4 +18,3 @@ https://fierce-bayou-58728.herokuapp.com/
 * The toughest part of this project was using Heroku and Express.js. I struggled with this great as back-end development is new to me. Figuring out the logic in how to remove a note while bumping up others placed was a challenge as well.
 ### What new skills did I learn?
 * I gained knowledge on how to use Heroku, Postman and Express properly, while using the knowledge I already have on front-end development.  
-
