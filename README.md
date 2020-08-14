@@ -1,6 +1,11 @@
 # note-taker
 
-
+## User Story
+```
+AS a user
+I WANT a great way to write my notes
+SO THAT I can be more organized and productive with my day-to-day activities
+```
 ## Heroku URL
 https://fierce-bayou-58728.herokuapp.com/
 
